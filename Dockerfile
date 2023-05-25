@@ -1,34 +1,18 @@
-# Use an OpenJDK 11 base image
-FROM maven:3.8.4-openjdk-11 AS builder
+# Utilizamos a imagem base do Maven com o JDK 11
+FROM maven:3.8.2-openjdk-11
 
-# Set the working directory inside the container
-WORKDIR /newsletter_back
+# Copia o diretório do projeto para dentro do container
+COPY ./newsletter_back /usr/src/app
 
-# Copy the pom.xml to the container
-COPY /newsletter_back/pom.xml .
+# Define o diretório de trabalho
+WORKDIR /usr/src/app
 
-# Download the dependencies defined in the pom.xml
-# RUN --mount=type=cache,target=/root/.m2 mvn dependency:go-offline -B
-# Baixar as dependências do Maven
-RUN mvn dependency:go-offline -B
+# Compila o projeto
+RUN mvn clean install
 
-# Copy the rest of the application source code to the container
-COPY /newsletter_back/src ./src
-
-# Build the application
-# RUN --mount=type=cache,target=/root/.m2 mvn package -DskipTests
-# Compilar o projeto
-RUN mvn package -DskipTests
-
-RUN ls -la /newsletter_back/target
-# Imagem final para a aplicação backend
-FROM openjdk:11-jre-slim
-
-# Copiar o arquivo JAR construído a partir do estágio anterior
-COPY --from=builder /newsletter_back/target/main-0.0.1-SNAPSHOT.jar .
-
-# Expose the port on which the Spring Boot application will listen
+# Expõe a porta 8080 para que possamos acessar nossa aplicação
 EXPOSE 8080
 
-# Specify the command to run the application when the container starts
-CMD ["java", "-jar", "main-0.0.1-SNAPSHOT.jar"]
+# Executa a aplicação
+CMD ["java", "-jar", "target/back-0.0.1-SNAPSHOT.jar"]
+

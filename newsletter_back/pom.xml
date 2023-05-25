@@ -5,23 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.7</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.7.12</version>
+		<relativePath/> 
 	</parent>
-	<groupId>com.academia</groupId>
-	<artifactId>main</artifactId>
+	<groupId>com.newsletter</groupId>
+	<artifactId>back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>main</name>
-	<description>Demo project for Spring Boot</description>
+	<name>back</name>
+	<description>Newsletter project back-end</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-	    <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-			<version>2.5.5</version> <!-- or the version you are using -->
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -40,18 +35,15 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- <dependency>
+    		<groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>5.3.10</version> <!-- or the version you are using -->
-		</dependency>
-
-
 	</dependencies>
 
 	<build>
