@@ -1,1 +1,5 @@
+com/newsletter/back/repository/NewsRepository.class
 com/newsletter/back/BackApplication.class
+com/newsletter/back/model/News.class
+com/newsletter/back/service/NewsService.class
+com/newsletter/back/controller/NewsController.class

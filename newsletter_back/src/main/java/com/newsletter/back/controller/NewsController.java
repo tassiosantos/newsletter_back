@@ -7,6 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+
+@CrossOrigin
 @RestController
 @RequestMapping("/noticia")
 public class NewsController {
@@ -21,7 +24,7 @@ public class NewsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<News> getNewsById(@PathVariable Long id) {
+    public ResponseEntity<News> getNewsById(@PathVariable Integer id) {
         News news = newsService.findById(id);
         return ResponseEntity.ok().body(news);
     }

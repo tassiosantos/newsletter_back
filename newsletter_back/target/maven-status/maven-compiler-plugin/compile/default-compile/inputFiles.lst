@@ -1,1 +1,5 @@
 /media/tassio/Arquivos_ssd/Documents/desenvolvimento_mobile/newsletter_back/newsletter_back/src/main/java/com/newsletter/back/BackApplication.java
+/media/tassio/Arquivos_ssd/Documents/desenvolvimento_mobile/newsletter_back/newsletter_back/src/main/java/com/newsletter/back/controller/NewsController.java
+/media/tassio/Arquivos_ssd/Documents/desenvolvimento_mobile/newsletter_back/newsletter_back/src/main/java/com/newsletter/back/repository/NewsRepository.java
+/media/tassio/Arquivos_ssd/Documents/desenvolvimento_mobile/newsletter_back/newsletter_back/src/main/java/com/newsletter/back/service/NewsService.java
+/media/tassio/Arquivos_ssd/Documents/desenvolvimento_mobile/newsletter_back/newsletter_back/src/main/java/com/newsletter/back/model/News.java
